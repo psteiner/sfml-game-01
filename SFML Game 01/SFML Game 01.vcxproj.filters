@@ -21,23 +21,23 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextureHolder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextureHolder.h">
+    <ClInclude Include="StringHelpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StringHelpers.h">
+    <ClInclude Include="ResourceHolder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="StringHelpers.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="ResourceHolder.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

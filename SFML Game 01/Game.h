@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
 
-#include "TextureHolder.h"
+#include "ResourceHolder.h"
 
 class Game
 {
@@ -27,7 +27,7 @@ private:
     sf::RenderWindow	    mWindow;
     sf::Texture             mTexture;
     sf::Sprite     		    mPlayer;
-    TextureHolder           mTextures;
+    ResourceHolder<sf::Texture, Textures::ID>          mTextures;
 
     sf::Font                mFont;
     sf::Text                mStatisticsText;
