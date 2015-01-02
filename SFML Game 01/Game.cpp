@@ -25,7 +25,9 @@ Game::Game()
     , mDebugGUI(false)
 {
 
-    mWindow.setVerticalSyncEnabled(true);
+    // See https://github.com/LaurentGomila/SFML/wiki/FAQ#graphics-vsync-framelimit
+    // mWindow.setVerticalSyncEnabled(true);
+    mWindow.setFramerateLimit(60);
 
     if (getenv("DEBUG"))
     {
