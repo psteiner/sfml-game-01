@@ -4,6 +4,7 @@
 #include <SFML/Window/Event.hpp>
 
 #include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 class Game
 {
@@ -27,7 +28,7 @@ private:
     sf::RenderWindow	    mWindow;
     sf::Texture             mTexture;
     sf::Sprite     		    mPlayer;
-    ResourceHolder<sf::Texture, Textures::ID>          mTextures;
+    TextureHolder           mTextures;
 
     sf::Font                mFont;
     sf::Text                mStatisticsText;

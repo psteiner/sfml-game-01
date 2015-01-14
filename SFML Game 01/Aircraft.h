@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics/Sprite.hpp>
 #include "Entity.h"
+#include "ResourceIdentifiers.h"
 
 class Aircraft : public Entity
 {
@@ -13,7 +14,9 @@ public:
     };
 
 public:
-    explicit        Aircraft(Type type);
+    explicit        Aircraft(Type type, const TextureHolder& textures);
+
+private:
     virtual void    drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
 
 private:

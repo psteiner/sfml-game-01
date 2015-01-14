@@ -7,11 +7,6 @@
 #include <stdexcept>
 
 
-namespace Textures
-{
-    enum ID { Landscape, Airplane, Missile };
-}
-
 
 template <typename Resource, typename Identifier>
 class ResourceHolder
