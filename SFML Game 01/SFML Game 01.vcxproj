@@ -16,6 +16,8 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="SpriteNode.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aircraft.h" />
@@ -24,7 +26,9 @@
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="ResourceIdentifiers.h" />
     <ClInclude Include="SceneNode.h" />
+    <ClInclude Include="SpriteNode.h" />
     <ClInclude Include="StringHelpers.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ResourceHolder.inl" />

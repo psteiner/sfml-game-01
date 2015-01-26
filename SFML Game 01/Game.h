@@ -5,41 +5,35 @@
 
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
+#include "World.h"
 
-class Game
+class Game : private sf::NonCopyable
 {
 public:
                             Game();
     void	                run();
 
-                            ~Game();
+
 private:
-    static const float      PlayerSpeed;
-    static const sf::Time   TimePerFrame;
 
     void	                processEvents();
     void	                update(sf::Time deltaTime);
     void	                render();
 
-    void                    handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
     void                    updateStatistics(sf::Time elapsedTime);
-    void                    updateAirplanePosition();
+    void                    handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
+
+private:
+    static const sf::Time   TimePerFrame;
 
     sf::RenderWindow	    mWindow;
-    sf::Texture             mTexture;
-    sf::Sprite     		    mPlayer;
-    TextureHolder           mTextures;
+    World                   mWorld;
 
     sf::Font                mFont;
     sf::Text                mStatisticsText;
     sf::Text                mAirplanePositionText;
     sf::Time                mStatisticsUpdateTime;
     std::size_t             mStatisticsNumFrames;
-
-    bool                    mIsMovingUp;
-    bool                    mIsMovingDown;
-    bool                    mIsMovingLeft;
-    bool                    mIsMovingRight;
 
     bool                    mDebugGUI;
 };
