@@ -2,6 +2,7 @@
 
 // System includes
 #include <array>
+#include <queue>
 
 // SFML Includes
 #include <SFML/System/NonCopyable.hpp>
@@ -14,6 +15,8 @@
 #include "SceneNode.h"
 #include "SpriteNode.h"
 #include "Aircraft.h"
+#include "Command.h"
+#include "CommandQueue.h"
 
 
 // Forward Declaration
@@ -30,9 +33,13 @@ class World : public sf::NonCopyable
         void                                draw();
         sf::Vector2f                        playerPosition();
 
+        CommandQueue&                       getCommandQueue();
+
     private:
         void                                loadTextures();
         void                                buildScene();
+        void                                adaptPlayerPosition();
+        void                                adaptPlayerVelocity();
 
     private:
         enum Layer
@@ -49,11 +56,10 @@ class World : public sf::NonCopyable
         
         SceneNode                           mSceneGraph;
         std::array<SceneNode*, LayerCount>  mSceneLayers;
+        CommandQueue                        mCommandQueue;
 
         sf::FloatRect                       mWorldBounds;
         sf::Vector2f                        mSpawnPosition;
         float                               mScrollSpeed;
         Aircraft*                           mPlayerAircraft;
-
 };
-

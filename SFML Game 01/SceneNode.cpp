@@ -1,7 +1,8 @@
-#include "SceneNode.h"
-
 #include <algorithm>
 #include <cassert>
+
+#include "SceneNode.h"
+#include "Command.h"
 
 SceneNode::SceneNode() :
 mChildren()
@@ -72,6 +73,11 @@ void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) 
     }
 }
 
+sf::Vector2f SceneNode::getWorldPosition() const
+{
+    return getWorldTransform() * sf::Vector2f();
+}
+
 sf::Transform SceneNode::getWorldTransform() const
 {
     sf::Transform transform = sf::Transform::Identity;
@@ -84,7 +90,20 @@ sf::Transform SceneNode::getWorldTransform() const
     return transform;
 }
 
-sf::Vector2f SceneNode::getWorldPosition() const
+void SceneNode::onCommand(const Command& command, sf::Time dt)
 {
-    return getWorldTransform() * sf::Vector2f();
+    if (command.category & getCategory())
+    {
+        command.action(*this, dt);
+    }
+
+    for(Ptr& child : mChildren)
+    {
+        child->onCommand(command, dt);
+    }
+}
+
+unsigned int SceneNode::getCategory() const
+{
+    return Category::Scene;
 }

@@ -6,6 +6,7 @@
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 #include "World.h"
+#include "Player.h"
 
 class Game : private sf::NonCopyable
 {
@@ -16,18 +17,18 @@ public:
 
 private:
 
-    void	                processEvents();
+    void	                processInput();
     void	                update(sf::Time deltaTime);
     void	                render();
 
     void                    updateStatistics(sf::Time elapsedTime);
-    void                    handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 
 private:
     static const sf::Time   TimePerFrame;
 
     sf::RenderWindow	    mWindow;
     World                   mWorld;
+    Player                  mPlayer;
 
     sf::Font                mFont;
     sf::Text                mStatisticsText;
