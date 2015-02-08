@@ -1,6 +1,14 @@
+// System Includes
+//
+
+// SFML Includes
+//
 #include <SFML/Graphics/RenderTarget.hpp>
-#include "ResourceHolder.h"
+
+// Game Includes
+//
 #include "Aircraft.h"
+#include "ResourceHolder.h"
 
 Textures::ID toTextureID(Aircraft::Type type)
 {

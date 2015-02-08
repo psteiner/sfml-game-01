@@ -1,15 +1,18 @@
 #pragma once
 
 // System includes
+//
 #include <array>
 #include <queue>
 
 // SFML Includes
+//
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Graphics/View.hpp>
 #include <SFML/Graphics/Text.hpp>
 
 // Game includes
+//
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 #include "SceneNode.h"

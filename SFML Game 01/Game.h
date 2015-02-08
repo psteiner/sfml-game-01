@@ -1,8 +1,14 @@
 #pragma once
+// System Includes
+//
 
+// SFML Includes
+//
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
 
+// Game Includes
+//
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 #include "World.h"

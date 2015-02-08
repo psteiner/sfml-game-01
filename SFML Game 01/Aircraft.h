@@ -1,9 +1,16 @@
 #pragma once
+// System Includes
+//
 
+// SFML Includes
+//
 #include <SFML/Graphics/Sprite.hpp>
 
+// Game Includes
+//
 #include "Entity.h"
 #include "ResourceIdentifiers.h"
+
 
 class Aircraft : public Entity
 {
