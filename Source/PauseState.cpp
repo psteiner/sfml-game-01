@@ -70,7 +70,7 @@ bool PauseState::handleEvent(const sf::Event& event)
 
     if (event.key.code == sf::Keyboard::BackSpace)
     {
-        // Escape pressed, remove itself to return to the game
+        // Backspace pressed, end game and return to menu
         requestStateClear();
         requestStackPush(States::Menu);
     }

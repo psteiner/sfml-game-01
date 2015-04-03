@@ -30,10 +30,10 @@ struct AircraftMover
 Player::Player()
 {
     // Set initial key bindings
-    mKeyBinding[sf::Keyboard::Left] = MoveLeft;
-    mKeyBinding[sf::Keyboard::Right] = MoveRight;
-    mKeyBinding[sf::Keyboard::Up] = MoveUp;
-    mKeyBinding[sf::Keyboard::Down] = MoveDown;
+    mKeyBinding[sf::Keyboard::W] = MoveUp;
+    mKeyBinding[sf::Keyboard::A] = MoveLeft;
+    mKeyBinding[sf::Keyboard::S] = MoveDown;
+    mKeyBinding[sf::Keyboard::D] = MoveRight;
 
     // Set initial action bindings
     initializeActions();
